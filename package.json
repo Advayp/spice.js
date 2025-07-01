@@ -5,11 +5,8 @@
   "engines": {
     "node": ">=18.0.0"
   },
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
+  "main": "index.js",
+  "types": "index.d.ts",
   "repository": "git@github.com:spiceai/spice.js.git",
   "author": "Spice AI, Inc. <webmaster@spice.ai>",
   "license": "MIT",
@@ -24,8 +21,8 @@
     "clean": "rimraf dist",
     "prebuild": "yarn clean",
     "build": "tsc",
-    "postbuild": "copyfiles proto/* dist",
-    "run": "node dist/index.js",
+    "postbuild": "copyfiles proto/* .",
+    "run": "node index.js",
     "pretest": "yarn build",
     "test": "jest",
     "dev": "npx nodemon --exec ts-node ./test/index.ts --watch test --ext .ts",
