@@ -1,0 +1,43 @@
+export interface QueryCompletionNotification {
+    name: string;
+    type: 'webhook';
+    uri: string;
+}
+export interface AsyncQueryRequest {
+    sql: string;
+    notifications: QueryCompletionNotification[];
+}
+export interface AsyncQueryResponse {
+    queryId: string;
+}
+export interface QueryCompleteNotification {
+    appId: number;
+    queryId: string;
+    requestTime: string;
+    completionTime: string;
+    state: string;
+    sql: string;
+    rowCount: 3;
+}
+export interface QueryResultsResponse {
+    rowCount: number;
+    schema: {
+        name: 'string';
+        type: {
+            name: string;
+        };
+    }[];
+    rows: any[];
+}
+export interface SpiceClientConfig {
+    apiKey?: string;
+    httpUrl?: string;
+    flightUrl?: string;
+    flightTlsEnabled?: boolean;
+    userAgent?: string;
+}
+export interface RefreshOverrides {
+    refresh_sql?: string | null;
+    refresh_mode?: string | null;
+    refresh_jitter_max?: string | null;
+}
