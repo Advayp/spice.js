@@ -33,7 +33,7 @@ const PROTO_PATH = './proto/Flight.proto';
 const PACKAGE_PATH = __dirname.includes('.next')
   ? path.join(
       __dirname.substring(0, __dirname.indexOf('.next')),
-      './node_modules/@spiceai/spice/dist'
+      './node_modules/@spiceai/spice/'
     )
   : __dirname;
 const fullProtoPath = path.join(PACKAGE_PATH, PROTO_PATH);
